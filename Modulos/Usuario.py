@@ -1,62 +1,62 @@
+from Modulos.Telas import Telas 
 class Usuario:
+  """ Documentação da Classe no Python
+      Funções do usuário padrão da Lanchonete.
   """
-  Documentação da Classe no Python
-  Funções do usuário padrão da lanchonete
-  """
-  # propriedade da classe (variáveis)
-  #cadeia - string - str - "texto 1234" "1234"
+
+  # propriedades da classe (variáveis)
+  # cadeia - string - str - "texto 1234" "1234"
   loginInformado:str = "cliente"
   senhaInformada:str = "1234"
 
   # Array - matriz ou vetor nomeado
-  dadosUsuarios = {
+  dadosUsuario = {
       "loginArmazenado" : "cliente",
       "senhaArmazenada" : "1234",
-      "nomeUsuario" : "joão dos santos",
-    }
+      "nomeUsuario" : "João dos Santos",
+  }
+
 
   # Método Construtor: executado ao instanciar a classe
   # self refere-se à instância da classe
-  #propriedades são variáveis da classe
-
-  #Método construtor
   def __init__( self ):
+    
+    #chamando a tela de entrada que está no módulo Telas.py
+    entrada = Telas() # instância da classe Telas 
+    entrada.entradaSistema()
 
-  #chamando o método logar da classe
-   self.logar()
+    # chamando o método logar da classe
+    self.logar()
 
-  def logar( self ):
+  def logar ( self ):
 
-    self.loginInformado = input( " Informe o login: \n")
-    self.senhaIformado = input ("Iforme a senha : \n")
-    #Comparação - Condicionais - Se - If
-    #senão - else - falso
-    if self.loginInformado == self.dadosUsuarios["loginArmazenado"]:
-      self.monstraMensagens(" Bem Vindo ao sistema ")
-      self.exibirInfosDoUsuario
+    self.loginInformado = input( "Informe o login: " )
+    self.senhaInformada = input( "Informe a senha: " )
+
+    # Comparação - Condicionais - Se - if
+    # senão - else - falso
+
+    if self.loginInformado == self.dadosUsuario["loginArmazenado"]:
+      self.mostraMensagens( "Bem Vindo ao Sistema" )
+      self.exibirInfosUsuario()
     else:
-      print("Falha ao se conectar, tente novamente")
+      print( " Falha ao se conectar, tente novamente ")
 
   def sair( self ):
     print( "Logout do sistema" )
 
-  def exibirInfosDoUsuario ( self ):
-    print("Os Dados do usuário são: \n Nome: \n login :")
-
-  def monstraMensagens(self, mensagem ):
-    """ Exibi as mensagens enviadas pelo parâmetro
-    """    
-    print( f"-------------------- \n")
-    print( f"| {mensagem} |\n ")
-    print( f" -------------------- \n")
-
+  def exibirInfosUsuario( self ):
+    print( " Os dados do usuário são: \n Nome: \n Login: " )
+    
+  
+    
+   
+     
 
 # Uma classe convencional precisa ser Instanciada para que seus objetos possam ser usados.
 # Instanciar uma classe é colocar uma cópia ( instância ) em uma variável ( objeto )
-#instanciar a classe (usá-lá)
-#objeto da classe
 # operador de atribuição =
-#atendente = Usuario() # objeto da classe
+# atendente = Usuario()
 
-#sair do sistema
-#atendente.sair()
+# usando um dos métodos
+# atendente.sair()
