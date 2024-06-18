@@ -39,8 +39,17 @@ class Telas:
         if os.name == "nt": # windows nt - linux posix - Mac darwin
             os.system(" cls ")    
         else:
-            os.system (" clear ")      
-       
+            os.system (" clear ")
+    
+    def InfosUsuarios( self ):              
+        print( f"+-------------------------------------------------------+" )
+        print( f"|                      Bem Vindo     {usuario}          |" )
+        print( f"|  * Menu - Escolha uma Opção:                          |" )
+        print( f"|  1 - Cadastrar                                        |" )
+        print( f"|  2 - Listar                                           |" )
+        print( f"+-------------------------------------------------------+" )     
+            
+    
         # if os.name == "nt": # windows nt - Linux posix - Mac darwin            
         #     os.system("cls")
         # elif os.name == "darwin":
