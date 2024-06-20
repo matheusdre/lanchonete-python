@@ -1,0 +1,13 @@
+[
+  {
+"loginArmazenado" : "cliente",
+"senhaArmazenada" : "1234",
+"nomeUsuario" : "João dos Santos"
+  },
+  
+  {
+"loginArmazenado" : "cliente2",
+"senhaArmazenada" : "1234",
+"nomeUsuario" : "Maria dos Santos"
+  }
+]
