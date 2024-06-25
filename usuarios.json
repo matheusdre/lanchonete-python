@@ -1,13 +1,1 @@
-[
-  {
-"loginArmazenado" : "cliente",
-"senhaArmazenada" : "1234",
-"nomeUsuario" : "João dos Santos"
-  },
-  
-  {
-"loginArmazenado" : "cliente2",
-"senhaArmazenada" : "1234",
-"nomeUsuario" : "Maria dos Santos"
-  }
-]
+[{"loginArmazenado": "cliente", "senhaArmazenada": "1234", "nomeUsuario": "Jo\u00c3\u00a3o dos Santos"}, {"loginArmazenado": "cliente2", "senhaArmazenada": "1234", "nomeUsuario": "Maria dos Santos"}, {"loginArmazenado": "matheus", "senhaArmazenada": "1234", "nomeUsuario": "Matheus Tinti"}, {"loginArmazenado": "matheus", "senhaArmazenada": "1234", "nomeUsuario": "Matheus Tinti"}, {"loginArmazenado": "matheus", "senhaArmazenada": "1234", "nomeUsuario": "Matheus Tinti"}, {"loginArmazenado": "matheus", "senhaArmazenada": "1234", "nomeUsuario": "Matheus Tinti"}]
