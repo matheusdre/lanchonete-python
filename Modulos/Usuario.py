@@ -1,5 +1,4 @@
 from Modulos.Telas import Telas 
-from GravaDados import GravaDados
 class Usuario:
   """ Documentação da Classe no Python
       Funções do usuário padrão da Lanchonete.
@@ -19,6 +18,8 @@ class Usuario:
   
   tela = Telas()
 
+  user = None
+
   # Método Construtor: executado ao instanciar a classe
   # self refere-se à instância da classe
   def __init__( self ):
@@ -31,27 +32,50 @@ class Usuario:
     self.logar()
 
   def logar ( self ):
-
-    self.loginInformado = input( "Informe o login: " )
-    self.senhaInformada = input( "Informe a senha: " )
+    
+    
+    self.loginInformado = input( "Informe o login ou 0 para sair: " )
+    
+    # opção para  sair do programa
+    if self.loginInformado == "0":
+      self.tela.saidaSistema()
+      return False
+    
+    else:
+      self.senhaInformada = input( "Informe a senha: " )
 
     # Comparação - Condicionais - Se - if
     # senão - else - falso
 
     # buscaremos os valores armazenados no Json Usando o GravaDados.py
-  usuarioArmazenado = GravaDados()
+    
+    with open("C:\\Users\\matheus.ctinti\\OneDrive - SENAC - SP\\Área de Trabalho\\Python VS\\lanchonete-python\\usuarios.json", "r") as usuarioArmazenado:
 
-  user = usuarioArmazenado.recuperaUsuario(self.loginInformado)
+      dadosNoArquivo = json.load( usuarioArmazenado )
 
-    if self.loginInformado == user ["loginArmazenado"] and self.senhaInformada == user ["senhaArmazenada"] :
-      
-      self.tela.mensagemSistema( "Login bem sucedido!" )
-      self.tela.InfosUsuario()
-      
-    else:
-      self.tela.mensagensSistema( " Falha ao se conectar, tente novamente ")
-      
-      self.logar()
+      for i, user in enumerate( dadosNoArquivo ):
+        if user["loginArmazenado"] == self.loginInformado:
+          print(user)
+          self.user = user
+        else:
+          self.tela.mensagensSistema("Nenhum usuário encntrado!")
+          break 
+                              
+      print(user) 
+
+      if self.loginInformado == self.user["loginArmazenado"] and self.senhaInformada == self.user["senhaArmazenada"]:
+          
+          self.tela.mensagemSistema( "Login bem sucedido!" )
+        
+          #enviando o nome do usuários para a tela
+          self.tela.InfosUsuario( user["nomeUsuario"])
+          
+      else:
+          self.tela.mensagensSistema( " Falha ao se conectar, tente novamente ")
+          
+          self.logar()
+
+    print(user)
 
   def sair( self ):
     print( "Logout do sistema" )

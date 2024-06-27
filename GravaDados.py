@@ -1,7 +1,7 @@
 import builtins
 import json # JavaScript Object Notatiom
 # importando o modulo de telas
-from Modulos.Telas import Telas
+#from Telas import Telas
 
 class GravaDados:
     
@@ -38,7 +38,7 @@ class GravaDados:
         usuariosCadastrados.append( novoUsuario )
 
     #  abrir o arquivo json e escrevemos dados atualizados nele 
-        with open("C:\\Users\\matheus.ctinti\\OneDrive - SENAC - SP\\Área de Trabalho\Python VS\\lanchonete-python\\usuarios.Json", "w") as dados:
+        with open("C:\\Users\\matheus.ctinti\\OneDrive - SENAC - SP\\Área de Trabalho\Python VS\\lanchonete-python\\usuarios.json", "w") as dados:
             
             # coloca os dados em formato json
             json.dump(usuariosCadastrados, dados )
